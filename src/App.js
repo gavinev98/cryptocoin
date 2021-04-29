@@ -1,16 +1,19 @@
 import './App.css';
 import axios from 'axios';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import * as api from './api/api';
 
 function App() {
 
-//run function on load.
+  //creating hook to store coin data
+  const[coin, setCoins] = useState(null);
 
+//run function to retrievce coins from api.
 useEffect(() => {
-  axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=100&page=1&sparkline=false').
-  then(response => {
-    console.log(response.data);
-  }).catch(error => console.log(error));
+      api.retriveCoins().then(res =>{
+        setCoins(res.data)
+        console.log(coin);
+    }).catch(error => console.log(error));
 }, []);
 
 
@@ -19,7 +22,7 @@ useEffect(() => {
 
   return (
     <div className="App">
- 
+        <h1>Gavins Crypto Tracker</h1>
     </div>
   );
 }
