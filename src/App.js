@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import * as api from './api/api';
 
+import Coin from './components/Coin';
+
 function App() {
 
   //creating hook to store coin data
@@ -24,6 +26,7 @@ useEffect(() => {
   return (
     <div className="App">
         <h1>Gavins Crypto Tracker</h1>
+        <Coin />
     </div>
   );
 }
