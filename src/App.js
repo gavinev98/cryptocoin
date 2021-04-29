@@ -7,13 +7,14 @@ function App() {
 
   //creating hook to store coin data
   const[coin, setCoins] = useState(null);
+  //creating hook to store error
+  const[error, setError] = useState('');
 
 //run function to retrievce coins from api.
 useEffect(() => {
       api.retriveCoins().then(res =>{
         setCoins(res.data)
-        console.log(coin);
-    }).catch(error => console.log(error));
+    }).catch(error => setError(error));
 }, []);
 
 
