@@ -23,6 +23,11 @@ const Coin = ({ coins }) => {
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
 
+    //captitalize first letter
+    const capitalizeLetter = (string) => {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
     
     return (
       coins.map(items => (
@@ -35,7 +40,7 @@ const Coin = ({ coins }) => {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              Lizard
+              {capitalizeLetter(items.id)}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
