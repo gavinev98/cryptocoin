@@ -26,7 +26,7 @@ useEffect(() => {
   return (
     <div className="App">
         <h1>Gavins Crypto Tracker</h1>
-        <Coin />
+        <Coin coins={coin} />
     </div>
   );
 }

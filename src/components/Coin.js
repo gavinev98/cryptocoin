@@ -26,11 +26,12 @@ const useStyles = makeStyles({
   });
 
 
-const Coin = () => {
+const Coin = ({ coin }) => {
 
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
 
+      console.log(coin);
 
     return (
         <Card className={classes.root}>
