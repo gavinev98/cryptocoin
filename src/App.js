@@ -8,7 +8,7 @@ import Coin from './components/Coin';
 function App() {
 
   //creating hook to store coin data
-  const[coin, setCoins] = useState(null);
+  const[coin, setCoins] = useState([]);
   //creating hook to store error
   const[error, setError] = useState('');
 
