@@ -26,18 +26,19 @@ const useStyles = makeStyles({
   });
 
 
-const Coin = ({ coin }) => {
+const Coin = ({ coins }) => {
 
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
 
-      console.log(coin);
-
+    
     return (
+
+      coins.map(items => (
         <Card className={classes.root}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Word of the Day
+          {items.id}
         </Typography>
         <Typography variant="h5" component="h2">
           be{bull}nev{bull}o{bull}lent
@@ -55,7 +56,7 @@ const Coin = ({ coin }) => {
         <Button size="small">Learn More</Button>
       </CardActions>
     </Card>
-    );
+  )));
 };
 
 export default Coin;
