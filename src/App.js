@@ -12,11 +12,14 @@ function App() {
   //creating hook to store error
   const[error, setError] = useState('');
 
+  //store current_price
+
+
 //run function to retrievce coins from api.
 useEffect(() => {
-      api.retriveCoins().then(res =>{
+     setInterval(api.retriveCoins().then(res =>{
         setCoins(res.data)
-    }).catch(error => setError(error));
+    }).catch(error => setError(error)), 100);
 }, []);
 
 
