@@ -15,6 +15,7 @@ const useStyles = makeStyles({
   media: {
     height: 140,
   },
+
 });
 
 
@@ -28,6 +29,8 @@ const Coin = ({ coins }) => {
       return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
+    console.log(coins);
+
     
     return (
       coins.map(items => (
@@ -37,10 +40,13 @@ const Coin = ({ coins }) => {
             className={classes.media}
             image={items.image}
             title="crypto-currency"
+            width="200px"
+            height="200px"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              {capitalizeLetter(items.id)}
+              <h1 className="crypto-name">{capitalizeLetter(items.id)}</h1> 
+              <h2 className="crypto-symbol">{items.symbol}</h2>
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
