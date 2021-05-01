@@ -14,13 +14,22 @@ function App() {
 
   //store current_price
 
+  
 
 //run function to retrievce coins from api.
 useEffect(() => {
-     setInterval(api.retriveCoins().then(res =>{
-        setCoins(res.data)
-    }).catch(error => setError(error)), 100);
-}, []);
+  const interval = setInterval(() => { 
+    api.retriveCoins().then(res =>{
+    setCoins(res.data)
+}).catch(error => setError(error))}, 15000);
+
+return () => clearInterval(interval);
+});
+
+
+//loading data
+
+
 
 
 
