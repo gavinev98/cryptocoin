@@ -37,7 +37,7 @@ return () => clearInterval(interval);
 
   return (
     <div className="App">
-        <h1>Gavins Crypto Tracker</h1>
+        <h1>Crypto Coin</h1>
         <Coin coins={coin} />
     </div>
   );

@@ -7,6 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Expand from './CustomButtons/Expand';
+
 
 const useStyles = makeStyles({
   root: {
@@ -15,7 +17,11 @@ const useStyles = makeStyles({
   media: {
     height: 140,
   },
-
+  divCenter : {
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    display: 'block !important',
+  },
 });
 
 
@@ -56,9 +62,9 @@ const Coin = ({ coins }) => {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
-           Expand
-          </Button>
+          <div className={classes.divCenter}>
+           <Expand  />
+           </div>
         </CardActions>
       </Card>
   )));
