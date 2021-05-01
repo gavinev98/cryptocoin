@@ -57,10 +57,7 @@ const Coin = ({ coins }) => {
         </CardActionArea>
         <CardActions>
           <Button size="small" color="primary">
-            Share
-          </Button>
-          <Button size="small" color="primary">
-            Learn More
+           Expand
           </Button>
         </CardActions>
       </Card>
