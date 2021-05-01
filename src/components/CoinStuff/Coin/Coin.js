@@ -9,13 +9,14 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Expand from '../../CustomButtons/Expand';
 
+
 import useStyles from './styles';
 
 
 const Coin = ({ coins }) => {
 
     const classes = useStyles();
-    const bull = <span className={classes.bullet}>•</span>;
+    const bull = <span className={classes.bullet}></span>;
 
     //captitalize first letter
     const capitalizeLetter = (string) => {
@@ -54,7 +55,9 @@ const Coin = ({ coins }) => {
            </div>
         </CardActions>
       </Card>
+    
   )));
+ 
 };
 
 export default Coin;

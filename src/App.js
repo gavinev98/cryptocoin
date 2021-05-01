@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import * as api from './api/api';
 
 import Coin from './components/CoinStuff/Coin/Coin';
+import CoinOverview from './components/CoinStuff/CoinSummary/CoinOverview';
 
 function App() {
 
@@ -38,7 +39,9 @@ return () => clearInterval(interval);
   return (
     <div className="App">
         <h1>Crypto Coin</h1>
-        <Coin coins={coin} />
+        <CoinOverview>
+        <Coin key={coin.symbol} coins={coin} />
+        </CoinOverview>
     </div>
   );
 }
