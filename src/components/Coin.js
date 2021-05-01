@@ -50,7 +50,8 @@ const Coin = ({ coins }) => {
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               <p>Current Price: €{items.current_price}</p>
-              <p style={items.price_change_percentage_24h > 0 ? { color : 'green'} : { color : 'red'}}> {items.price_change_percentage_24h} %</p>
+              <Typography display="inline">24HR </Typography>
+             <Typography display="inline" style={items.price_change_percentage_24h > 0 ? { color : 'green'} : { color : 'red'}}> {items.price_change_percentage_24h} %</Typography>
             </Typography>
           </CardContent>
         </CardActionArea>
