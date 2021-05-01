@@ -49,7 +49,8 @@ const Coin = ({ coins }) => {
               <h2 className="crypto-symbol">{items.symbol}</h2>
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              <p>Current Price: €{items.current_price} </p>
+              <p>Current Price: €{items.current_price}</p>
+              <p style={items.price_change_percentage_24h > 0 ? { color : 'green'} : { color : 'red'}}> {items.price_change_percentage_24h} %</p>
             </Typography>
           </CardContent>
         </CardActionArea>
