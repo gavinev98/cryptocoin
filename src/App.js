@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import * as api from './api/api';
 
-import Coin from './components/CoinStuff/Coin';
+import Coin from './components/CoinStuff/Coin/Coin';
 
 function App() {
 
