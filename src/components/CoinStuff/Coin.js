@@ -7,22 +7,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Expand from './CustomButtons/Expand';
+import Expand from '../CustomButtons/Expand';
 
-
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 140,
-  },
-  divCenter : {
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    display: 'block !important',
-  },
-});
+import useStyles from './styles';
 
 
 const Coin = ({ coins }) => {
