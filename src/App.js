@@ -12,8 +12,8 @@ function App() {
   const[coin, setCoins] = useState([]);
   //creating hook to store error
   const[error, setError] = useState('');
-
-  //store current_price
+  //creating hook to store state of modal for crypto details
+  const[showModal, setModal] = useState(false);
 
   
 

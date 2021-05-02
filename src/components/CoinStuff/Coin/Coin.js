@@ -54,7 +54,7 @@ const Coin = ({ coins }) => {
         </CardActionArea>
         <CardActions>
           <div className={classes.divCenter}>
-           <Expand  />
+           <Expand   />
            </div>
         </CardActions>
       </Card>

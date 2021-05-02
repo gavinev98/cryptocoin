@@ -1,20 +1,18 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import useStyles from './CoinView';
-
+import { Modal } from '@material-ui/core';
 
 const CoinOverview = (props) => {
 
     const classes = useStyles();
 
     return (
-        <div className={classes.root}>
-        <Grid container spacing={3}>
-        <Grid item xs={4}>
-        {props.children}
-        </Grid>
-        </Grid>
-        </div>
+   <Modal
+   aria-labelledby="simple-modal-title"
+   aria-describedby="simple-modal-description">
+
+  </Modal>
     );
 };
 
