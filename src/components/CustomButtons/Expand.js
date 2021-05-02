@@ -16,6 +16,8 @@ const Wrapper = styled.div`
 
 class Expand extends Component {
 
+
+
     getChildContext () {
         return { bg: bg }
       }

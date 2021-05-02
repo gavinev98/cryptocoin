@@ -32,7 +32,7 @@ return () => clearInterval(interval);
   return (
     <div className="App">
         <h1>Crypto Coin</h1>
-        <Coin key={coin.symbol} coins={coin} />
+        <Coin key={coin.symbol} coins={coin} setModal={setModal} showModal={showModal} />
     </div>
   );
 }

@@ -9,12 +9,14 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Expand from '../../CustomButtons/Expand';
 import Grid from '@material-ui/core/Grid';
+import { Modal } from '@material-ui/core';
 
 
 import useStyles from './styles';
+import CoinOverview from '../CoinSummary/CoinOverview';
 
 
-const Coin = ({ coins }) => {
+const Coin = ({ coins, setModal, showModal }) => {
 
     const classes = useStyles();
     const bull = <span className={classes.bullet}></span>;
@@ -28,6 +30,7 @@ const Coin = ({ coins }) => {
 
     
     return (
+      <div>
       <Grid container spacing={3}>
       {coins.map(items => (
         <Grid item xs={4}>
@@ -54,13 +57,23 @@ const Coin = ({ coins }) => {
         </CardActionArea>
         <CardActions>
           <div className={classes.divCenter}>
-           <Expand   />
+           <Expand onClick={setModal(value => !value)}   />
+
            </div>
         </CardActions>
       </Card>
       </Grid>
   ))}
   </Grid>
+
+  <Modal
+  open={showModal}
+  content={CoinOverview}
+  aria-labelledby="crypto-details"
+  aria-describedby="crypto-description">
+  </Modal>
+
+  </div>
   );
  
 };
