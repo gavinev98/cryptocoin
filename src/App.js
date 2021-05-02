@@ -29,19 +29,10 @@ return () => clearInterval(interval);
 
 
 //loading data
-
-
-
-
-
-
-
   return (
     <div className="App">
         <h1>Crypto Coin</h1>
-        <CoinOverview>
         <Coin key={coin.symbol} coins={coin} />
-        </CoinOverview>
     </div>
   );
 }

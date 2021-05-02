@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Expand from '../../CustomButtons/Expand';
+import Grid from '@material-ui/core/Grid';
 
 
 import useStyles from './styles';
@@ -27,7 +28,9 @@ const Coin = ({ coins }) => {
 
     
     return (
-      coins.map(items => (
+      <Grid container spacing={3}>
+      {coins.map(items => (
+        <Grid item xs={4}>
         <Card className={classes.root}>
         <CardActionArea>
           <CardMedia
@@ -55,8 +58,10 @@ const Coin = ({ coins }) => {
            </div>
         </CardActions>
       </Card>
-    
-  )));
+      </Grid>
+  ))}
+  </Grid>
+  );
  
 };
 
