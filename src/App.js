@@ -28,16 +28,17 @@ useEffect(() => {
 return () => clearInterval(interval);
 });
 
+console.log(coin)
 
 //loading data
   return (
     <div className="App">
         <Typography>Crypto Coin</Typography>
-        {coin == []
+        {coin.length != 0
         ? 
-        <Coin key={coin.symbol} coins={coin}  />
+        <Coin key={coin.symbol} coins={coin}  />  
         :
-        <Loading />
+       <Loading/>
       }
     </div>
   );
