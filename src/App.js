@@ -2,6 +2,7 @@ import './App.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import * as api from './api/api';
+import Typography from '@material-ui/core/Typography';
 
 import Coin from './components/CoinStuff/Coin/Coin';
 import CoinOverview from './components/CoinStuff/CoinSummary/CoinOverview';
@@ -12,8 +13,7 @@ function App() {
   const[coin, setCoins] = useState([]);
   //creating hook to store error
   const[error, setError] = useState('');
-  //creating hook to store state of modal for crypto details
-  const[showModal, setModal] = useState(false);
+
 
   
 
@@ -31,8 +31,8 @@ return () => clearInterval(interval);
 //loading data
   return (
     <div className="App">
-        <h1>Crypto Coin</h1>
-        <Coin key={coin.symbol} coins={coin} setModal={setModal} showModal={showModal} />
+        <Typography>Crypto Coin</Typography>
+        <Coin key={coin.symbol} coins={coin}  />
     </div>
   );
 }

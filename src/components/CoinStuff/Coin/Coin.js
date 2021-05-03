@@ -10,14 +10,16 @@ import Typography from '@material-ui/core/Typography';
 import Expand from '../../CustomButtons/Expand';
 import Grid from '@material-ui/core/Grid';
 import { Modal } from '@material-ui/core';
-
+import { useState } from 'react';
 
 import useStyles from './styles';
 import CoinOverview from '../CoinSummary/CoinOverview';
 
 
-const Coin = ({ coins, setModal, showModal }) => {
+const Coin = ({ coins }) => {
 
+    //creating hook to store state of modal for crypto details
+    const[showModal, setModal] = useState(false);
     const classes = useStyles();
     const bull = <span className={classes.bullet}></span>;
 
@@ -26,14 +28,13 @@ const Coin = ({ coins, setModal, showModal }) => {
       return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
-    console.log(coins);
-
+ 
     
     return (
       <div>
       <Grid container spacing={3}>
       {coins.map(items => (
-        <Grid item xs={4}>
+        <Grid key={coins.symbol} item xs={4}>
         <Card className={classes.root}>
         <CardActionArea>
           <CardMedia
@@ -45,11 +46,11 @@ const Coin = ({ coins, setModal, showModal }) => {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              <h1 className="crypto-name">{capitalizeLetter(items.id)}</h1> 
-              <h2 className="crypto-symbol">{items.symbol}</h2>
+              <Typography variant="h1" className="crypto-name">{capitalizeLetter(items.id)}</Typography> 
+              <Typography variant="h2"  className="crypto-symbol">{items.symbol}</Typography>
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-              <p>Current Price: €{items.current_price}</p>
+              <Typography>Current Price: €{items.current_price}</Typography>
               <Typography display="inline">24HR </Typography>
              <Typography display="inline" style={items.price_change_percentage_24h > 0 ? { color : 'green'} : { color : 'red'}}> {items.price_change_percentage_24h} %</Typography>
             </Typography>
@@ -57,7 +58,7 @@ const Coin = ({ coins, setModal, showModal }) => {
         </CardActionArea>
         <CardActions>
           <div className={classes.divCenter}>
-           <Expand onClick={setModal(value => !value)}   />
+           <Expand openModal={(e) => setModal(true)} />
 
            </div>
         </CardActions>
@@ -65,14 +66,6 @@ const Coin = ({ coins, setModal, showModal }) => {
       </Grid>
   ))}
   </Grid>
-
-  <Modal
-  open={showModal}
-  content={CoinOverview}
-  aria-labelledby="crypto-details"
-  aria-describedby="crypto-description">
-  </Modal>
-
   </div>
   );
  
