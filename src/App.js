@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 
 import Coin from './components/CoinStuff/Coin/Coin';
 import CoinOverview from './components/CoinStuff/CoinSummary/CoinOverview';
+import Loading from './components/Loading/Loading';
 
 function App() {
 
@@ -32,7 +33,12 @@ return () => clearInterval(interval);
   return (
     <div className="App">
         <Typography>Crypto Coin</Typography>
+        {coin == []
+        ? 
         <Coin key={coin.symbol} coins={coin}  />
+        :
+        <Loading />
+      }
     </div>
   );
 }
