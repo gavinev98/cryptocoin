@@ -59,7 +59,6 @@ const Coin = ({ coins }) => {
         <CardActions>
           <div className={classes.divCenter}>
            <Expand openModal={(e) => setModal(!showModal)} />
-
            </div>
         </CardActions>
       </Card>
