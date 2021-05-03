@@ -20,6 +20,20 @@ const Coin = ({ coins }) => {
 
     //creating hook to store state of modal for crypto details
     const[showModal, setModal] = useState(false);
+
+    //setting selected coin.
+    const[selectedCoin, setSelectedCoin] = useState({
+      name : '',
+      image : '',
+      ath_date : '',
+      ath : null, 
+      market_cap: null,
+      price_change_24h: null,
+      total_volume: null,
+      total_supply: null
+    });
+
+
     const classes = useStyles();
     const bull = <span className={classes.bullet}></span>;
 
@@ -64,15 +78,18 @@ const Coin = ({ coins }) => {
       </Card>
       </Grid>
   ))}
-  </Grid>
 
-  <Modal
-      open={showModal}
-      onClose={showModal}
-      aria-labelledby="crypto-details"
-      aria-describedby="crypto-description">
-      <CoinOverview />
-      </Modal>
+    <Modal
+    open={showModal}
+    onClose={showModal}
+    aria-labelledby="crypto-details"
+    aria-describedby="crypto-description">
+    <CoinOverview />
+    </Modal>
+
+   </Grid>
+
+
 
   </div>
   );
