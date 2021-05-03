@@ -65,6 +65,15 @@ const Coin = ({ coins }) => {
       </Grid>
   ))}
   </Grid>
+
+  <Modal
+      open={showModal}
+      onClose={showModal}
+      aria-labelledby="crypto-details"
+      aria-describedby="crypto-description">
+      <CoinOverview />
+      </Modal>
+
   </div>
   );
  
