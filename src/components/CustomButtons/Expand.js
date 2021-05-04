@@ -63,7 +63,7 @@ const theme = createMuiTheme({
   },
 });
 
-export default function CustomizedButtons({ openModal, coinSelected }) {
+export default function CustomizedButtons({ openModal }) {
   const classes = useStyles();
 
   return (

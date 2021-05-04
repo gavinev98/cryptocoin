@@ -25,6 +25,9 @@ const Coin = ({ items }) => {
     //setting selected coin.
     const[selectedCoin, setSelectedCoin] = useState({});
 
+    //setting error state
+    const[error, setError] = useState('');
+
 
 
 
@@ -40,8 +43,7 @@ const Coin = ({ items }) => {
     const coinSelection = (id) => {
       //make api call for coin selected.
       api.retrieveSpecificCoin(id).then(res => {
-        setSelectedCoin(res.data)
-        .catch(error => console.log('error'));
+        setSelectedCoin(res.data).catch(error => setError(error));
       })}
 
  
@@ -72,7 +74,7 @@ const Coin = ({ items }) => {
         </CardActionArea>
         <CardActions>
           <div className={classes.divCenter}>
-           <Expand openModal={(e) => setModal(!showModal)} coinSelected={() => coinSelection(items.id)} />
+           <Expand openModal={(e) => setModal(!showModal)} />
            </div>
         </CardActions>
       </Card>
@@ -86,7 +88,7 @@ const Coin = ({ items }) => {
     aria-labelledby="crypto-details"
     aria-describedby="crypto-description"
     >
-    <CoinOverview selectedCoin={selectedCoin} />
+    <CoinOverview selectedCoin={items} />
     </Modal>
 
 
