@@ -14,24 +14,18 @@ import { useState } from 'react';
 
 import useStyles from './styles';
 import CoinOverview from '../CoinSummary/CoinOverview';
+import * as api from './../../../api/api';
 
 
-const Coin = ({ coins }) => {
+const Coin = ({ items }) => {
 
     //creating hook to store state of modal for crypto details
     const[showModal, setModal] = useState(false);
 
     //setting selected coin.
-    const[selectedCoin, setSelectedCoin] = useState({
-      name : '',
-      image : '',
-      ath_date : '',
-      ath : null, 
-      market_cap: null,
-      price_change_24h: null,
-      total_volume: null,
-      total_supply: null
-    });
+    const[selectedCoin, setSelectedCoin] = useState({});
+
+
 
 
     const classes = useStyles();
@@ -42,13 +36,19 @@ const Coin = ({ coins }) => {
       return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
+    //retrieving the coin selected and storing it in state.
+    const coinSelection = (id) => {
+      //make api call for coin selected.
+      api.retrieveSpecificCoin(id).then(res => {
+        setSelectedCoin(res.data)
+        .catch(error => console.log('error'));
+      })}
+
  
     
     return (
       <div>
-      <Grid container spacing={3}>
-      {coins.map(items => (
-        <Grid key={coins.symbol} item xs={4}>
+    
         <Card className={classes.root}>
         <CardActionArea>
           <CardMedia
@@ -72,22 +72,24 @@ const Coin = ({ coins }) => {
         </CardActionArea>
         <CardActions>
           <div className={classes.divCenter}>
-           <Expand openModal={(e) => setModal(!showModal)} />
+           <Expand openModal={(e) => setModal(!showModal)} coinSelected={() => coinSelection(items.id)} />
            </div>
         </CardActions>
       </Card>
-      </Grid>
-  ))}
+    
+
+
 
     <Modal
     open={showModal}
     onClose={showModal}
     aria-labelledby="crypto-details"
-    aria-describedby="crypto-description">
-    <CoinOverview />
+    aria-describedby="crypto-description"
+    >
+    <CoinOverview selectedCoin={selectedCoin} />
     </Modal>
 
-   </Grid>
+
 
 
 

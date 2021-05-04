@@ -63,13 +63,13 @@ const theme = createMuiTheme({
   },
 });
 
-export default function CustomizedButtons({ openModal }) {
+export default function CustomizedButtons({ openModal, coinSelected }) {
   const classes = useStyles();
 
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <Button onClick={openModal} variant="contained" color="primary" className={classes.margin}>
+        <Button onClick={openModal}  variant="contained" color="primary" className={classes.margin}>
           View
         </Button>
       </ThemeProvider>

@@ -13,4 +13,5 @@ export default makeStyles((theme) => ({
         marginRight: 'auto',
         display: 'block !important',
       },
+
 }));

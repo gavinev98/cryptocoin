@@ -8,7 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 
 
-const CoinOverview = () => {
+const CoinOverview = ({ selectedCoin }) => {
 
     const classes = useStyles();
 
@@ -17,7 +17,7 @@ const CoinOverview = () => {
       <Card className={classes.root}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-     
+          {selectedCoin.name}
         </Typography>
         <Typography variant="h5" component="h2">
          Second Test

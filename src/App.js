@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import * as api from './api/api';
 import Typography from '@material-ui/core/Typography';
-
+import Grid from '@material-ui/core/Grid';
 import Coin from './components/CoinStuff/Coin/Coin';
 import CoinOverview from './components/CoinStuff/CoinSummary/CoinOverview';
 import Loading from './components/Loading/Loading';
@@ -35,8 +35,12 @@ console.log(coin)
     <div className="App">
         <Typography>Crypto Coin</Typography>
         {coin.length != 0
-        ? 
-        <Coin key={coin.symbol} coins={coin}  />  
+        ?   
+        coin.map(items => (
+        <Grid key={items.symbol} item xs={4}>
+        <Coin key={items.symbol} items={items}  /> 
+        </Grid> 
+        ))
         :
        <Loading/>
       }
