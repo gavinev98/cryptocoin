@@ -1,9 +1,13 @@
 import React from 'react';
-import {Chart} from 'chart.js';
+import {Chart, registerables } from 'chart.js';
+import {useEffect} from 'react';
+import classes from "./LineGraph.module.css";
 
 const CoinOverviewCharts = () => {
 
+    Chart.register(...registerables);
 
+    useEffect(() => {
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'bar',
@@ -39,6 +43,7 @@ const CoinOverviewCharts = () => {
                 }
             }
         });
+    });
         
 
     return (
