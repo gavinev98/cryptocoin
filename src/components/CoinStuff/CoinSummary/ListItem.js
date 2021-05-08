@@ -7,6 +7,7 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import TrendingUpIcon from '@material-ui/icons/TrendingUp';
 import TrendingDownIcon from '@material-ui/icons/TrendingDown';
+import StarIcon from '@material-ui/icons/Star';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,10 +41,10 @@ export default function FolderList({selectedCoin}) {
       <ListItem>
         <ListItemAvatar>
           <Avatar>
-          
+          <StarIcon color="secondary" />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary="Vacation" secondary="July 20, 2014" />
+        <ListItemText primary={`€`+selectedCoin.ath} secondary="ATH" />
       </ListItem>
     </List>
   );
