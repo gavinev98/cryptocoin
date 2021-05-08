@@ -8,6 +8,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 
 import CoinOverviewCharts from '../CoinSummary/CoinOverviewCharts';
+import ListItem from '../CoinSummary/ListItem';
 
 
 const CoinOverview = ({ selectedCoin }) => {
@@ -17,15 +18,16 @@ const CoinOverview = ({ selectedCoin }) => {
   
     return (
 
-      <Card className={classes.root}>
+      <Card  className={classes.root}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           {selectedCoin.name}
         </Typography>
           <CoinOverviewCharts />
+          <ListItem />
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+        <Button size="small">Close</Button>
       </CardActions>
     </Card>
     );
