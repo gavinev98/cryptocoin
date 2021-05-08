@@ -23,8 +23,8 @@ const CoinOverview = ({ selectedCoin }) => {
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           {selectedCoin.name}
         </Typography>
-          <CoinOverviewCharts />
-          <ListItem />
+          <CoinOverviewCharts selectedCoin={selectedCoin} />
+          <ListItem selectedCoin={selectedCoin} />
       </CardContent>
       <CardActions>
         <Button size="small">Close</Button>

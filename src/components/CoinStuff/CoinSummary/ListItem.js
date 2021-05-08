@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function FolderList() {
+export default function FolderList({selectedCoin}) {
   const classes = useStyles();
 
   return (
@@ -25,7 +25,7 @@ export default function FolderList() {
           
           </Avatar>
         </ListItemAvatar>
-        <ListItemText primary="Photos" secondary="Jan 9, 2014" />
+        <ListItemText primary={`€`+ selectedCoin.price_change_24h} secondary="Price change in the last 24 hours" />
       </ListItem>
       <ListItem>
         <ListItemAvatar>
