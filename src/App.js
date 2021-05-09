@@ -35,7 +35,9 @@ console.log(coin)
   return (
     <div className="App">
         <Navbar />
-
+        <Typography variant="h1" component="h2" gutterBottom>
+        A look at todays market
+        </Typography>
         {coin.length != 0
         ?   
         coin.map(items => (

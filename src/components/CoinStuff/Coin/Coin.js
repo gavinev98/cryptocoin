@@ -50,7 +50,6 @@ const Coin = ({ items }) => {
     
     return (
       <div>
-    
         <Card className={classes.root}>
         <CardActionArea>
           <CardMedia
