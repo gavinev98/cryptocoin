@@ -88,7 +88,7 @@ const Coin = ({ items }) => {
     aria-labelledby="crypto-details"
     aria-describedby="crypto-description"
     >
-    <CoinOverview selectedCoin={items} />
+    <CoinOverview selectedCoin={items} setModal={setModal} showModal={showModal} />
     </Modal>
 
 

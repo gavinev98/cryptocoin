@@ -11,7 +11,7 @@ import CoinOverviewCharts from '../CoinSummary/CoinOverviewCharts';
 import ListItem from '../CoinSummary/ListItem';
 
 
-const CoinOverview = ({ selectedCoin }) => {
+const CoinOverview = ({ selectedCoin, setModal, showModal }) => {
     
   const classes = useStyles();
 
@@ -27,7 +27,7 @@ const CoinOverview = ({ selectedCoin }) => {
           <ListItem selectedCoin={selectedCoin} />
       </CardContent>
       <CardActions>
-        <Button size="small">Close</Button>
+        <Button size="small" onClick={(e) => setModal(!showModal)}>Close</Button>
       </CardActions>
     </Card>
     );
