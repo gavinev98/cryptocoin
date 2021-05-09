@@ -30,6 +30,7 @@ const CoinOverview = ({ selectedCoin, setModal, showModal }) => {
         <Button size="small" onClick={(e) => setModal(!showModal)}>Close</Button>
       </CardActions>
     </Card>
+
     );
 };
 
