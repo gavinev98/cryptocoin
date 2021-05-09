@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Coin from './components/CoinStuff/Coin/Coin';
 import CoinOverview from './components/CoinStuff/CoinSummary/CoinOverview';
 import Loading from './components/Loading/Loading';
+import Navbar from './components/UI/Navbar';
 
 function App() {
 
@@ -33,7 +34,8 @@ console.log(coin)
 //loading data
   return (
     <div className="App">
-        <Typography>Crypto Coin</Typography>
+        <Navbar />
+
         {coin.length != 0
         ?   
         coin.map(items => (
