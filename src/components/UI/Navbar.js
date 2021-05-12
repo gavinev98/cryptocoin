@@ -9,7 +9,7 @@ const Navbar = () => {
         <AppBar position="static">
             <Toolbar>
                 <Typography variant="h6" >
-                Crypto Coin
+                Crypto Coins
                 </Typography>
             </Toolbar>
         </AppBar>
