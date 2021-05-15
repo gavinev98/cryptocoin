@@ -34,11 +34,16 @@ export default function BasicTable() {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell>Coin</TableCell>
+            <TableCell align="right">Current Price</TableCell>
+            <TableCell align="right">Price Change 24hr</TableCell>
+            <TableCell align="right">Market Cap</TableCell>
+            <TableCell align="right">Market Cap Change 24hr</TableCell>
+            <TableCell align="right">Total Volume</TableCell>
+            <TableCell align="right">Circulating Supply</TableCell>
+            <TableCell align="right">All Time High</TableCell>
+            <TableCell align="right">All Time High Date</TableCell>
+            <TableCell align="right">Max Supply</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
