@@ -51,7 +51,8 @@ console.log(coin)
        <Loading/>
       }
       </Grid>
-      <CoinTable />
+      <CoinTable coins={coin} />
+     
     </div>
   );
 }
