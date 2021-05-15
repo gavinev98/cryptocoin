@@ -35,9 +35,10 @@ console.log(coin)
   return (
     <div className="App">
         <Navbar />
-        <Typography variant="h1" component="h2" gutterBottom>
+        <Typography variant="h2" component="h2" gutterBottom>
         A look at todays market
         </Typography>
+        <Grid container spacing={1}>
         {coin.length != 0
         ?   
         coin.map(items => (
@@ -48,6 +49,7 @@ console.log(coin)
         :
        <Loading/>
       }
+      </Grid>
     </div>
   );
 }
