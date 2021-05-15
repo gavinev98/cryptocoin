@@ -8,7 +8,7 @@ import Coin from './components/CoinStuff/Coin/Coin';
 import CoinOverview from './components/CoinStuff/CoinSummary/CoinOverview';
 import Loading from './components/Loading/Loading';
 import Navbar from './components/UI/Navbar';
-import CoinTable from '../src/components/CoinStuff/CoinTable';
+import CoinTable from './components/CoinStuff/CoinTable/CoinTable';
 
 function App() {
 
