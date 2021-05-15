@@ -8,6 +8,7 @@ import Coin from './components/CoinStuff/Coin/Coin';
 import CoinOverview from './components/CoinStuff/CoinSummary/CoinOverview';
 import Loading from './components/Loading/Loading';
 import Navbar from './components/UI/Navbar';
+import CoinTable from '../src/components/CoinStuff/CoinTable';
 
 function App() {
 
@@ -42,7 +43,7 @@ console.log(coin)
         {coin.length != 0
         ?   
         coin.map(items => (
-        <Grid key={items.symbol} item xs={4}>
+        <Grid key={items.symbol} item xs={2} spacing={3}>
         <Coin key={items.symbol} items={items}  /> 
         </Grid> 
         ))
@@ -50,6 +51,7 @@ console.log(coin)
        <Loading/>
       }
       </Grid>
+      <CoinTable />
     </div>
   );
 }

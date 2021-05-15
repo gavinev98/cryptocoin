@@ -61,8 +61,8 @@ const Coin = ({ items }) => {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              <Typography variant="h1" className="crypto-name">{capitalizeLetter(items.id)}</Typography> 
-              <Typography variant="h2"  className="crypto-symbol">{items.symbol}</Typography>
+              <Typography variant="h4" className="crypto-name">{capitalizeLetter(items.id)}</Typography> 
+    
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               <Typography>Current Price: €{items.current_price}</Typography>
