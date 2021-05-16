@@ -40,16 +40,16 @@ export default function BasicTable({ coins }) {
          <Table className={classes.table} aria-label="simple table">
            <TableHead>
              <TableRow>
-               <TableCell>Coin</TableCell>
-               <TableCell  align="right">Current Price</TableCell>
-               <TableCell align="right">Price Change 24hr</TableCell>
-               <TableCell align="right">Market Cap</TableCell>
-               <TableCell align="right">Market Cap Change 24hr</TableCell>
-               <TableCell align="right">Total Volume</TableCell>
-               <TableCell align="right">Circulating Supply</TableCell>
-               <TableCell align="right">All Time High</TableCell>
-               <TableCell align="right">All Time High Date</TableCell>
-               <TableCell align="right">Max Supply</TableCell>
+               <TableCell style={{fontWeight: "bold"}}>Coin</TableCell>
+               <TableCell style={{fontWeight: "bold"}}  align="right">Current Price</TableCell>
+               <TableCell style={{fontWeight: "bold"}} align="right">Price Change 24hr</TableCell>
+               <TableCell style={{fontWeight: "bold"}} align="right">Market Cap</TableCell>
+               <TableCell style={{fontWeight: "bold"}} align="right">Market Cap Change 24hr</TableCell>
+               <TableCell style={{fontWeight: "bold"}} align="right">Total Volume</TableCell>
+               <TableCell style={{fontWeight: "bold"}} align="right">Circulating Supply</TableCell>
+               <TableCell style={{fontWeight: "bold"}} align="right">All Time High</TableCell>
+               <TableCell style={{fontWeight: "bold"}} align="right">All Time High Date</TableCell>
+               <TableCell style={{fontWeight: "bold"}} align="right">Max Supply</TableCell>
              </TableRow>
            </TableHead>
            <TableBody>
@@ -59,7 +59,7 @@ export default function BasicTable({ coins }) {
                  {capitalizeLetter(coinData.id)}
                  </TableCell>
                  <TableCell align="right">{coinData.current_price}</TableCell>
-                 <TableCell align="right">{coinData.price_change_percentage_24h + `%`}</TableCell>
+                 <TableCell style={coinData.price_change_percentage_24h > 0 ? { color : 'green'} : {color : 'red'}} align="right">{coinData.price_change_percentage_24h + `%`}</TableCell>
                  <TableCell align="right">{coinData.market_cap}</TableCell>
                  <TableCell align="right">{coinData.market_cap_change_24hr}</TableCell>
                  <TableCell align="right">{coinData.total_volume}</TableCell>

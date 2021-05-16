@@ -51,6 +51,9 @@ console.log(coin)
        <Loading/>
       }
       </Grid>
+      <Typography style={{marginTop: '5%'}} variant="h2" component="h2" gutterBottom>
+        Cryptos by comparison...
+        </Typography>
       <CoinTable coins={coin} />
      
     </div>
