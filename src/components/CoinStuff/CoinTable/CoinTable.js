@@ -54,9 +54,9 @@ export default function BasicTable({ coins }) {
            </TableHead>
            <TableBody>
              {coins.map((coinData) => (
-               <TableRow key={coinData.id}>
-                 <TableCell   component="th" scope="row">
-                   {capitalizeLetter(coinData.id)}
+               <TableRow  key={coinData.id}>
+                 <TableCell style={{fontWeight: "bold"}}   component="th" scope="row">
+                 {capitalizeLetter(coinData.id)}
                  </TableCell>
                  <TableCell align="right">{coinData.current_price}</TableCell>
                  <TableCell align="right">{coinData.price_change_percentage_24h + `%`}</TableCell>
