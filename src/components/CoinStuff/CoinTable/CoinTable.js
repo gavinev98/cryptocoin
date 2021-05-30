@@ -8,11 +8,23 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Loading from '../../Loading/Loading';
+import Avatar from  '@material-ui/core/avatar';
 
 
 const useStyles = makeStyles({
   table: {
-    minWidth: 650,
+    width: '85%',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+  },
+  tableHeader: { 
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    borderRadius: 3,
+    border: 0,
+    color: 'white',
+    height: 48,
+    padding: '0 30px',
+    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
   },
 });
 
@@ -38,7 +50,7 @@ export default function BasicTable({ coins }) {
     {coins.length != 0 ?
         <TableContainer component={Paper}>
          <Table className={classes.table} aria-label="simple table">
-           <TableHead>
+           <TableHead className={classes.tableHeader}>
              <TableRow>
                <TableCell style={{fontWeight: "bold"}}>Coin</TableCell>
                <TableCell style={{fontWeight: "bold"}}  align="right">Current Price</TableCell>
@@ -56,7 +68,7 @@ export default function BasicTable({ coins }) {
              {coins.map((coinData) => (
                <TableRow  key={coinData.id}>
                  <TableCell style={{fontWeight: "bold"}}   component="th" scope="row">
-                 {capitalizeLetter(coinData.id)}
+                 <Avatar alt="coin-symbol" src={coinData.image} />{capitalizeLetter(coinData.id)}
                  </TableCell>
                  <TableCell align="right">{coinData.current_price}</TableCell>
                  <TableCell style={coinData.price_change_percentage_24h > 0 ? { color : 'green'} : {color : 'red'}} align="right">{coinData.price_change_percentage_24h + `%`}</TableCell>
