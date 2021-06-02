@@ -9,6 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Loading from '../../Loading/Loading';
 import Avatar from  '@material-ui/core/avatar';
+import { TablePagination } from '@material-ui/core';
 
 
 const useStyles = makeStyles({
@@ -48,7 +49,8 @@ export default function BasicTable({ coins }) {
   return (     
       <div>
     {coins.length != 0 ?
-        <TableContainer component={Paper}>
+      <div>
+        <TableContainer component={Paper} >
          <Table className={classes.table} aria-label="simple table">
            <TableHead className={classes.tableHeader}>
              <TableRow>
@@ -83,10 +85,50 @@ export default function BasicTable({ coins }) {
              ))}
            </TableBody>
          </Table>
-       </TableContainer> : 
-         <Loading />
+       </TableContainer>
+
+        </div>
+       : 
+       <div>
+       <TableContainer component={Paper} >
+        <Table className={classes.table} aria-label="simple table">
+          <TableHead className={classes.tableHeader}>
+            <TableRow>
+              <TableCell style={{fontWeight: "bold"}}>Coin</TableCell>
+              <TableCell style={{fontWeight: "bold"}}  align="right">Current Price</TableCell>
+              <TableCell style={{fontWeight: "bold"}} align="right">Price Change 24hr</TableCell>
+              <TableCell style={{fontWeight: "bold"}} align="right">Market Cap</TableCell>
+              <TableCell style={{fontWeight: "bold"}} align="right">Market Cap Change 24hr</TableCell>
+              <TableCell style={{fontWeight: "bold"}} align="right">Total Volume</TableCell>
+              <TableCell style={{fontWeight: "bold"}} align="right">Circulating Supply</TableCell>
+              <TableCell style={{fontWeight: "bold"}} align="right">All Time High</TableCell>
+              <TableCell style={{fontWeight: "bold"}} align="right">All Time High Date</TableCell>
+              <TableCell style={{fontWeight: "bold"}} align="right">Max Supply</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+              <TableRow  key={0}>
+                <TableCell style={{fontWeight: "bold"}}   component="th" scope="row">
+                <Avatar alt="coin-symbol" src={null} />
+                </TableCell>
+                <TableCell align="right">0</TableCell>
+                <TableCell  align="right">0</TableCell>
+                <TableCell align="right">0</TableCell>
+                <TableCell align="right">0</TableCell>
+                <TableCell align="right">0</TableCell>
+                <TableCell align="right">0</TableCell>
+                <TableCell align="right">0</TableCell>
+                <TableCell align="right">0</TableCell>
+                <TableCell align="right">0</TableCell>
+              </TableRow>
+          
+          </TableBody>
+        </Table>
+      </TableContainer>
+
+       </div>
+       
          }
-  );
   </div>
   )};
 
