@@ -15,7 +15,7 @@ const ItemList = (props) => {
         <ItemsCarousel
         requestToChangeActive={setActiveItemIndex}
         activeItemIndex={activeItemIndex}
-        numberOfCards={8}
+        numberOfCards={5}
         gutter={20}
         leftChevron={<button>{"<"}</button>}
         rightChevron={<button>{">"}</button>}

@@ -44,7 +44,7 @@ console.log(coin)
         {coin.length != 0
         ?   
         coin.map(items => (
-        <Grid key={items.symbol} item xs={2} spacing={3}>
+        <Grid key={items.symbol} item xs={12} spacing={3}>
         <Coin key={items.symbol} items={items}  /> 
         </Grid> 
         ))
