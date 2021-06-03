@@ -50,7 +50,7 @@ console.log(coin)
         <ItemsCarousel
         requestToChangeActive={setActiveItemIndex}
         activeItemIndex={activeItemIndex}
-        numberOfCards={2}
+        numberOfCards={8}
         gutter={20}
         leftChevron={<button>{"<"}</button>}
         rightChevron={<button>{">"}</button>}
