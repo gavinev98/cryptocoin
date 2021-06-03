@@ -40,7 +40,7 @@ console.log(coin)
         <Typography variant="h2" component="h2" gutterBottom>
         A look at todays market
         </Typography>
-        <Grid container spacing={1}>
+        <ItemsCarousel>
         {coin.length != 0
         ?   
         coin.map(items => (
@@ -51,7 +51,8 @@ console.log(coin)
         :
        <Loading/>
       }
-      </Grid>
+   
+      </ItemsCarousel>
       <Typography style={{marginTop: '5%'}} variant="h2" component="h2" gutterBottom>
         Cryptos by comparison...
         </Typography>
