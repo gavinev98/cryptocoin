@@ -9,7 +9,9 @@ import CoinOverview from './components/CoinStuff/CoinSummary/CoinOverview';
 import Loading from './components/Loading/Loading';
 import Navbar from './components/UI/Navbar';
 import CoinTable from './components/CoinStuff/CoinTable/CoinTable';
-import ItemsCarousel from "react-items-carousel";
+import ItemsCarousel from './components/ItemsCarousel/ItemList';
+
+
 
 function App() {
 
@@ -18,13 +20,6 @@ function App() {
   //creating hook to store error
   const[error, setError] = useState('');
 
-  //setting a state for the carousel of items.
-  const [activeItemIndex, setActiveItemIndex] = useState(0);
-  //icon to go back forth through carousel.
-  const chevronWidth = 40;
-
-
-  
 
 //run function to retrievce coins from api.
 useEffect(() => {
@@ -46,17 +41,6 @@ console.log(coin)
         A look at todays market
         </Typography>
         <Grid container spacing={1}>
-        <div style={{ padding: `0 ${chevronWidth}px` }}>
-        <ItemsCarousel
-        requestToChangeActive={setActiveItemIndex}
-        activeItemIndex={activeItemIndex}
-        numberOfCards={8}
-        gutter={20}
-        leftChevron={<button>{"<"}</button>}
-        rightChevron={<button>{">"}</button>}
-        outsideChevron
-        chevronWidth={chevronWidth}
-        >
         {coin.length != 0
         ?   
         coin.map(items => (
@@ -67,8 +51,6 @@ console.log(coin)
         :
        <Loading/>
       }
-       </ItemsCarousel>
-       </div>
       </Grid>
       <Typography style={{marginTop: '5%'}} variant="h2" component="h2" gutterBottom>
         Cryptos by comparison...
